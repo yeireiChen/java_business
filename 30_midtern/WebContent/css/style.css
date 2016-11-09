@@ -1,0 +1,32 @@
+.body
+{
+	margin-top: 30px; 
+	text-align: center;
+	overflow-x: hidden;
+}
+
+.title
+{
+	font-size: 20px;
+}
+
+.content
+{
+	font-size: 17px;
+}
+
+form {
+	display: inline;
+}
+
+form .submitBtnCSS{
+    vertical-align: top;
+    width: 40px;
+    display: inline;
+    text-align: center;
+    font-size: 8px;
+}
+
+form .hideBtnCSS{
+	display: none;
+}
