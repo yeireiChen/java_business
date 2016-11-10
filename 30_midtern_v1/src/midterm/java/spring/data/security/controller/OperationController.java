@@ -19,6 +19,19 @@ public class OperationController{
 	@Autowired
 	TransactionService transactionService;
 	
+	
+	
+	@RequestMapping(value = "/choose", method = RequestMethod.GET)
+	private ModelAndView choose(HttpServletRequest request){
+		AccountModel accountModel = accountService.getAccountDetails();
+		if(accountModel.getAccountId() != 0) {
+			return new ModelAndView("choose", "AccountModel", accountModel);
+		}else{
+			request.setAttribute("message", "提醒：管理者並無交易功能");
+			return new ModelAndView("operation");
+		}
+	}
+	
 	@RequestMapping(value = "/operation", method = RequestMethod.GET)
 	private ModelAndView index(HttpServletRequest request){
 		AccountModel accountModel = accountService.getAccountDetails();

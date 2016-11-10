@@ -18,6 +18,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 	@Autowired
 	DataSource dataSource;
 	
+	
+	
 	@Autowired
     public void configureGlobalSecurity(AuthenticationManagerBuilder auth) throws Exception {
 		auth.jdbcAuthentication().dataSource(dataSource)
@@ -51,7 +53,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		        .and()
 		        .formLogin()
 		        .loginPage("/login").permitAll()
-		        .defaultSuccessUrl("/operation")
+		        .defaultSuccessUrl("/choose")
 		        .failureUrl("/loginError")
 		        .and()
 		   .exceptionHandling().accessDeniedPage("/accessError");
